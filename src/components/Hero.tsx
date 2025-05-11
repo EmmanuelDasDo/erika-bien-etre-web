@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -20,11 +21,11 @@ const Hero = () => {
             bienveillant et professionnel à Caen et à distance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="bg-erika-peach hover:bg-erika-peach/90 text-white px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base">
-              Réserver une séance
+            <Button className="bg-erika-peach hover:bg-erika-peach/90 text-white px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base" asChild>
+              <Link to="/contact">Réserver une séance</Link>
             </Button>
-            <Button variant="outline" className="border-erika-peach text-erika-peach hover:bg-erika-peach/10 px-8 py-6 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-base">
-              En savoir plus
+            <Button variant="outline" className="border-erika-peach text-erika-peach hover:bg-erika-peach/10 px-8 py-6 rounded-full shadow-md hover:shadow-lg transition-all duration-300 text-base" asChild>
+              <Link to="/a-propos">En savoir plus</Link>
             </Button>
           </div>
         </div>

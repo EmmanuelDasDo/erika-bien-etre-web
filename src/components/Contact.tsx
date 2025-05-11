@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MapPin, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   return (
@@ -59,8 +60,8 @@ const Contact = () => {
                 />
               </div>
               
-              <Button type="submit" className="w-full bg-erika-peach hover:bg-erika-peach/90 text-white">
-                Envoyer
+              <Button type="submit" className="w-full bg-erika-peach hover:bg-erika-peach/90 text-white" asChild>
+                <Link to="/contact">Envoyer</Link>
               </Button>
             </form>
           </div>
@@ -101,8 +102,8 @@ const Contact = () => {
               <p className="text-gray-700 mb-4">
                 Je propose également des séances en ligne, partout en France et à l'international.
               </p>
-              <Button variant="outline" className="border-erika-peach text-erika-peach hover:bg-erika-peach/10">
-                En savoir plus
+              <Button variant="outline" className="border-erika-peach text-erika-peach hover:bg-erika-peach/10" asChild>
+                <Link to="/coaching-en-ligne">En savoir plus</Link>
               </Button>
             </div>
           </div>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { User, Briefcase, Video, FileText, Leaf } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -37,7 +38,7 @@ const Services = () => {
       icon: Leaf,
       title: "Prestations Bien-être",
       description: "Techniques de relaxation et outils pour retrouver harmonie entre corps et esprit.",
-      route: "/bien-etre",
+      route: "/prestations-bien-etre",
       color: "from-emerald-100 to-emerald-200"
     }
   ];
@@ -68,8 +69,9 @@ const Services = () => {
                 <Button 
                   variant="link" 
                   className="text-erika-peach hover:text-erika-peach/80 p-0"
+                  asChild
                 >
-                  En savoir plus
+                  <Link to={service.route}>En savoir plus</Link>
                 </Button>
               </div>
             </div>
@@ -77,8 +79,11 @@ const Services = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <Button className="bg-erika-peach hover:bg-erika-peach/90 text-white px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base">
-            Prendre rendez-vous
+          <Button 
+            className="bg-erika-peach hover:bg-erika-peach/90 text-white px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-base"
+            asChild
+          >
+            <Link to="/contact">Prendre rendez-vous</Link>
           </Button>
         </div>
       </div>

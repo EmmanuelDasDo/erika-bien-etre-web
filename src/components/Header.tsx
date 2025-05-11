@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,74 +11,121 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const menuItems = [
-    { name: 'Accueil', path: '/' },
-    { name: 'Coaching Personnel', path: '/coaching-personnel' },
-    { name: 'Coaching Professionnel', path: '/coaching-professionnel' },
-    { name: 'Coaching en Ligne', path: '/coaching-en-ligne' },
-    { name: 'Bilan de Compétences', path: '/bilan-competences' },
-    { name: 'Prestations Bien-être', path: '/bien-etre' },
-    { name: 'À Propos', path: '/a-propos' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
   return (
-    <header className="w-full py-4 bg-erika-offwhite/80 backdrop-blur-sm fixed top-0 z-50">
+    <header className="py-4 bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/4726b17e-90c0-47c8-a35e-ba34e3712137.png" 
-              alt="Erika Coach de Vie" 
-              className="h-16"
-            />
-          </Link>
-        </div>
+        <Link to="/" className="flex items-center gap-2">
+          <img 
+            src="/lovable-uploads/4726b17e-90c0-47c8-a35e-ba34e3712137.png" 
+            alt="Erika Coach Logo" 
+            className="h-12 w-auto"
+          />
+          <div className="hidden sm:block">
+            <div className="text-lg font-playfair font-medium leading-tight">Erika</div>
+            <div className="text-sm text-gray-600">Coach de Vie</div>
+          </div>
+        </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex">
-          <ul className="flex space-x-6">
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <Link 
-                  to={item.path} 
-                  className="text-gray-800 hover:text-erika-peach transition-colors duration-300 py-2"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* Desktop Menu */}
+        <nav className="hidden lg:flex items-center gap-6">
+          <Link to="/" className="text-gray-700 hover:text-erika-peach transition-colors">
+            Accueil
+          </Link>
+          <Link to="/coaching-personnel" className="text-gray-700 hover:text-erika-peach transition-colors">
+            Coaching Personnel
+          </Link>
+          <Link to="/coaching-professionnel" className="text-gray-700 hover:text-erika-peach transition-colors">
+            Coaching Professionnel
+          </Link>
+          <Link to="/coaching-en-ligne" className="text-gray-700 hover:text-erika-peach transition-colors">
+            Coaching En Ligne
+          </Link>
+          <Link to="/bilan-competences" className="text-gray-700 hover:text-erika-peach transition-colors">
+            Bilan de Compétences
+          </Link>
+          <Link to="/prestations-bien-etre" className="text-gray-700 hover:text-erika-peach transition-colors">
+            Prestations Bien-être
+          </Link>
+          <Link to="/a-propos" className="text-gray-700 hover:text-erika-peach transition-colors">
+            À Propos
+          </Link>
+          <Button className="bg-erika-peach hover:bg-erika-peach/90 text-white" asChild>
+            <Link to="/contact">Contact</Link>
+          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
-          className="lg:hidden text-gray-800 focus:outline-none" 
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="lg:hidden">
+          <button 
+            onClick={toggleMenu}
+            className="p-2 focus:outline-none text-gray-700"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-md z-50 animate-fade-in">
-          <nav className="container mx-auto px-4 py-4">
-            <ul className="flex flex-col space-y-3">
-              {menuItems.map((item) => (
-                <li key={item.name}>
-                  <Link 
-                    to={item.path} 
-                    className="block text-gray-800 hover:text-erika-peach transition-colors duration-300 py-2"
-                    onClick={toggleMenu}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <div className="lg:hidden bg-white border-t">
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <Link 
+              to="/" 
+              className="px-3 py-2 text-gray-700 hover:bg-erika-peach/10 hover:text-erika-peach rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Accueil
+            </Link>
+            <Link 
+              to="/coaching-personnel" 
+              className="px-3 py-2 text-gray-700 hover:bg-erika-peach/10 hover:text-erika-peach rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Coaching Personnel
+            </Link>
+            <Link 
+              to="/coaching-professionnel" 
+              className="px-3 py-2 text-gray-700 hover:bg-erika-peach/10 hover:text-erika-peach rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Coaching Professionnel
+            </Link>
+            <Link 
+              to="/coaching-en-ligne" 
+              className="px-3 py-2 text-gray-700 hover:bg-erika-peach/10 hover:text-erika-peach rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Coaching En Ligne
+            </Link>
+            <Link 
+              to="/bilan-competences" 
+              className="px-3 py-2 text-gray-700 hover:bg-erika-peach/10 hover:text-erika-peach rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Bilan de Compétences
+            </Link>
+            <Link 
+              to="/prestations-bien-etre" 
+              className="px-3 py-2 text-gray-700 hover:bg-erika-peach/10 hover:text-erika-peach rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Prestations Bien-être
+            </Link>
+            <Link 
+              to="/a-propos" 
+              className="px-3 py-2 text-gray-700 hover:bg-erika-peach/10 hover:text-erika-peach rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              À Propos
+            </Link>
+            <Link 
+              to="/contact" 
+              className="px-3 py-2 bg-erika-peach text-white hover:bg-erika-peach/90 rounded-md text-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
+          </div>
         </div>
       )}
     </header>
