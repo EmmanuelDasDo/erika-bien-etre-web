@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
@@ -20,36 +19,40 @@ const Header = () => {
             alt="Erika Coach Logo" 
             className="h-12 w-auto"
           />
-          <div className="hidden sm:block">
-            <div className="text-lg font-playfair font-medium leading-tight">Erika</div>
-            <div className="text-sm text-gray-600">Coach de Vie</div>
-          </div>
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center gap-6">
-          <Link to="/" className="text-gray-700 hover:text-erika-peach transition-colors">
+        <nav className="hidden lg:flex items-center gap-4">
+          <Link to="/" className="text-gray-700 hover:text-erika-peach transition-colors text-sm whitespace-nowrap">
             Accueil
           </Link>
-          <Link to="/coaching-personnel" className="text-gray-700 hover:text-erika-peach transition-colors">
+          <Link to="/coaching-personnel" className="text-gray-700 hover:text-erika-peach transition-colors text-sm whitespace-nowrap">
             Coaching Personnel
           </Link>
-          <Link to="/coaching-professionnel" className="text-gray-700 hover:text-erika-peach transition-colors">
+          <Link to="/coaching-professionnel" className="text-gray-700 hover:text-erika-peach transition-colors text-sm whitespace-nowrap">
             Coaching Professionnel
           </Link>
-          <Link to="/coaching-en-ligne" className="text-gray-700 hover:text-erika-peach transition-colors">
+          <Link to="/coaching-en-ligne" className="text-gray-700 hover:text-erika-peach transition-colors text-sm whitespace-nowrap">
             Coaching En Ligne
           </Link>
-          <Link to="/bilan-competences" className="text-gray-700 hover:text-erika-peach transition-colors">
+          <Link to="/bilan-competences" className="text-gray-700 hover:text-erika-peach transition-colors text-sm whitespace-nowrap">
             Bilan de Compétences
           </Link>
-          <Link to="/prestations-bien-etre" className="text-gray-700 hover:text-erika-peach transition-colors">
+          <Link to="/prestations-bien-etre" className="text-gray-700 hover:text-erika-peach transition-colors text-sm whitespace-nowrap">
             Prestations Bien-être
           </Link>
-          <Link to="/a-propos" className="text-gray-700 hover:text-erika-peach transition-colors">
+          <Link to="/a-propos" className="text-gray-700 hover:text-erika-peach transition-colors text-sm whitespace-nowrap">
             À Propos
           </Link>
-          <Button className="bg-erika-peach hover:bg-erika-peach/90 text-white" asChild>
+          <div className="flex items-center gap-2 mx-1">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-erika-peach transition-colors">
+              <Instagram size={20} />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-erika-peach transition-colors">
+              <Facebook size={20} />
+            </a>
+          </div>
+          <Button className="bg-erika-peach hover:bg-erika-peach/90 text-white text-sm whitespace-nowrap" asChild>
             <Link to="/contact">Contact</Link>
           </Button>
         </nav>
@@ -125,6 +128,14 @@ const Header = () => {
             >
               Contact
             </Link>
+            <div className="flex items-center gap-4 justify-center my-2">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-erika-peach transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-erika-peach transition-colors">
+                <Facebook size={20} />
+              </a>
+            </div>
           </div>
         </div>
       )}

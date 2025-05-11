@@ -15,13 +15,13 @@ const Footer = () => {
               Accompagnement personnalisé pour votre développement personnel et professionnel à Caen et à distance.
             </p>
             <div className="flex space-x-3">
-              <a href="https://facebook.com" className="bg-gray-700 p-2 rounded-full hover:bg-erika-peach transition-colors" aria-label="Facebook">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-gray-700 p-2 rounded-full hover:bg-erika-peach transition-colors" aria-label="Facebook">
                 <Facebook size={18} />
               </a>
-              <a href="https://instagram.com" className="bg-gray-700 p-2 rounded-full hover:bg-erika-peach transition-colors" aria-label="Instagram">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-gray-700 p-2 rounded-full hover:bg-erika-peach transition-colors" aria-label="Instagram">
                 <Instagram size={18} />
               </a>
-              <a href="https://linkedin.com" className="bg-gray-700 p-2 rounded-full hover:bg-erika-peach transition-colors" aria-label="LinkedIn">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-gray-700 p-2 rounded-full hover:bg-erika-peach transition-colors" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </a>
             </div>
